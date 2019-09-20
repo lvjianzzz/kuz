@@ -235,4 +235,22 @@ Document 对象使我们可以从脚本中对 HTML 页面中的所有元素进�
     ```
     window.onload = function () {}
     ```
++ 循环绑定事件(两种解决方案)
+    ```
+    方法一
+    for(var i= 0;i<document.querySelectorAll('.test').length){
+        document.querySelectorAll('.test')[i].index = i
+        document.querySelectorAll('.test')[i].onclick = function(){
+            console.log(this.index)
+        }
+    }
+    方法二
+    for(var i= 0;i<document.querySelectorAll('.test').length){
+        (function(n){
+            return document.querySelectorAll[n].onclick = function(){
+                console.log(n)
+            }
+        })(i)
+    }
+    ```
 

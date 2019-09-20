@@ -1,15 +1,18 @@
-
-
-
-
-
-
-
+# jquery
 ##  jquery 是原生js的框架
-
 + 入口函数
-   $(document).ready(function(){});  可以简写成$(function(){}); 
-$('类名') 选择的节点
+相当于原生js的window.onload
+但不会覆盖,可以写多个
+而window.onload只可写一个，写多个会被覆盖
+同时，window.onload必须等到页面内包括图片的所有元素加载完毕后才能执行
+而$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。只加载了dom框架，对于需要时间的大的图片不等待
+```
+$(document).ready(funciton(){
+
+}) //方法1 
+$(function(){}) //方法2 
+
+```
 jQuery的两个变量   $ 和  jQuery
 (当有其他框架中使用$造成影响的时候才使用jQuery)
 

@@ -101,7 +101,7 @@
         ```
     + Boolean类型
       + Boolean()函数
-        + 数字0;NaN;空字符串'';null;undefined;会被转换为false
+        + 数字0;NaN;空字符串'';null;undefined;false会被转换为false
         其余的都转换为true
   + 算数预算符的运算(具有隐式转换)
     + +在无字符串时其起加号作用,在有字符串是其起字符串连接作用
