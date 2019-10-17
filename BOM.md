@@ -189,6 +189,8 @@ pseudoElt 指定一个要匹配的伪元素的字符串 所以普通元素省略
 	}
 }
 ```
++ 事件属性 
+	https://www.w3school.com.cn/tags/html_ref_eventattributes.asp
 + 补充(网络)
 	+ screen对象，Screen 对象中存放着有关显示浏览器屏幕的信息,属性 :
 	availHeight:返回显示屏幕的高度		
