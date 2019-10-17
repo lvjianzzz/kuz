@@ -189,6 +189,42 @@ pseudoElt 指定一个要匹配的伪元素的字符串 所以普通元素省略
 	}
 }
 ```
++ 补充(网络)
+	+ screen对象，Screen 对象中存放着有关显示浏览器屏幕的信息,属性 :
+	availHeight:返回显示屏幕的高度		
+	availWidth:返回显示屏幕的宽度
+	colorDepth:返回目标设备或缓冲器上的调色板的比特深度。
+	height:返回屏幕区域的实际高度
+	width:返回屏幕区域的实际宽度
+	+ window对象的history属性
+	window.history.go(-1);window可以省略;返回前一页 history.back();
+	history.go(1);前进一页  history.forward();
+	history.length查看历史中的页面数
+	+ location 对象 可通过 window.location 属性来访问
+	hash:设置或返回从井号 (#) 开始的 URL（锚）。
+	host:设置或返回主机名和当前 URL 的端口号
+	hostname:设置或返回当前 URL 的主机名。
+	href:设置或返回完整的 URL。
+	pathname:设置或返回当前 URL 的路径部分
+	port:设置或返回当前 URL 的端口号
+	protocol:设置或返回当前 URL 的协议。
+	search:设置或返回从问号 (?) 开始的 URL（查询部分）
+	assign()加载新的文档。
+	reload()重新加载当前文档。
+	replace()用新的文档替换当前文档
+	+ navigator对象，包含的属性描述了正在使用的浏览器
+	appName:返回浏览器的名称。
+	appVersion:返回浏览器的平台和版本信息。
+	platform:返回运行浏览器的操作系统平台。
+	appCodeName:返回浏览器的代码名。
+	+ window.open(URL,name,features,replace)
+	URL：新窗口中显示的文档的 URL
+	name：声明了新窗口的名称
+	features：声明了新窗口要显示的标准浏览器的特征
+	replace：布尔值，true - URL 替换浏览历史中的当前条目。 false - URL 在浏览历史中创建新的条目。
+	+ window.close()打开新窗口
+	+ window.moveTo() 移动当前窗口
+	+ window.resizeTo() 调整当前窗口的尺寸
 
 
 

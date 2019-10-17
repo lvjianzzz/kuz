@@ -219,4 +219,17 @@
 
 + z-index 当元素开启定位以后就可以设置z-index这个属性。默认是0值越大，越靠上。
 z-index可以指定一个整数作为参数，值越大元素显示的优先级越高，也就是z-index值较大的元素会显示在网页的最上层。
++ css设置文字多余部分显示省略号
+    // 有时添加在嵌入样式中不生效，需要添加在行内样式中
+    + 显示单行
+        overflow: hidden;
+　　    text-overflow:ellipsis;
+　　    white-space: nowrap;
+    + 显示多行 
+        word-break: break-all;
+　　    text-overflow: ellipsis;
+　　    display: -webkit-box;
+　　    -webkit-box-orient: vertical;
+　　    -webkit-line-clamp: 2; //行数
+　　    overflow: hidden;    
 

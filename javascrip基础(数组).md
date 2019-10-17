@@ -128,6 +128,30 @@
     从数组中删除指定的一个或多个元素，返回结果为新的数组（会改变原来的数组，会将指定元素从原数组中删除）
     新数组 = 原数组.splice(起始索引index, 需要删除的个数,第三个参数, 第四个参数...)
     第三个及之后的参数，表示：向原数组中添加新的元素，这些元素将会自动插入到开始位置索引的前面
++ 数组排序方法(扩展)
+```
+  <script>
+        var separate = arr => {
+            if (arr.length < 2) {
+                return arr
+            }
+            var left = [],
+                right = [],
+                compare = arr[0]
+            arr.forEach(ele => {
+                if (ele < compare) {
+                    left.push(ele)
+                } else if (ele > compare) {
+                    right.push(ele)
+                }
+            });
+            left.push(arr[0])
+            return separate(left).concat(separate(right))
+        }
+        var arr = [2, 1, 3, 5, 6, 4, 8, 4, 9, 4, 8485, 564, 12, 45, 3, 4598, 4964, 641564, 5, 421, 2, 454]
+        console.log(separate(arr))
+    </script>
+```
 
      
 
