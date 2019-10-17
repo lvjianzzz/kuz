@@ -1,43 +1,64 @@
 # SASS
+
 Sass/Less是一门CSS预处理语言，它扩展了CSS语言，增加了变量，Mixin，函数等特性，使CSS更易维护和扩展
+
 ## 安装
+
 ### 安装Ruby
-sass基于Ruby语言开发而成，因此安装sass前需要安装Ruby
-注意：安装过程中请注意勾选Add Ruby executables to your PATH添加到系统环境变量
+
+`sass`基于`Ruby`语言开发而成，因此安装`sass`前需要安装`Ruby`
+
+注意：安装过程中请注意勾选`Add Ruby executables to your PATH`添加到系统环境变量
+
 安装完成后需测试安装有没有成功，win+r 输入 cmd 打开命令窗口，输入以下命令：
+
+```
 ruby -v
 //如安装成功会打印
 ruby 2.2.2p95 (2015-04-13 revision 50295) [i386-mingw32]
-如上已经安装成功。但因为国内网络的问题导致gem源间歇性中断因此我们需要更换gem源。（使用国内镜像的的gem源 [https://gems.ruby-china.com/）如下：](https://gems.ruby-china.com/%EF%BC%89%E5%A6%82%E4%B8%8B%EF%BC%9A)>
+```
+
+如上已经安装成功。但因为国内网络的问题导致`gem`源间歇性中断因此我们需要更换`gem`源。（使用国内镜像的的gem源 https://gems.ruby-china.com/）如下：>
+
+```
 //1.删除原gem源
-gem sources --remove [https://rubygems.org/](https://rubygems.org/)
+gem sources --remove https://rubygems.org/
 
 //2.添加国内镜像
-gem sources -a [https://gems.ruby-china.com/](https://gems.ruby-china.com/)
+gem sources -a https://gems.ruby-china.com/
 
 //3.打印是否替换成功
 gem sources -l
 
 //4.更换成功后打印如下
 *** CURRENT SOURCES ***
-[https://gems.ruby-china.com/](https://gems.ruby-china.com/)
+https://gems.ruby-china.com/
+```
 
-// 简化命令
-gem sources --add [https://gems.ruby-china.com/](https://gems.ruby-china.com/) --remove [https://rubygems.org/](https://rubygems.org/)
-gem sources -l
 ### 安装Sass
-Ruby自带一个叫做RubyGems的系统，用来安装基于Ruby的软件。我们可以使用这个系统来 轻松地安装Sass和Compass。要安装最新版本的Sass和Compass，你需要 win+r 输入 cmd 打开命令窗口，输入下面的命令：
+
+`Ruby`自带一个叫做`RubyGems`的系统，用来安装基于`Ruby`的软件。我们可以使用这个系统来 轻松地安装`Sass`和`Compass`。要安装最新版本的`Sass`和`Compass`，你需要 win+r 输入 cmd 打开命令窗口，输入下面的命令：
+
+```
 //安装如下(如mac安装遇到权限问题需加 sudo gem install sass)
 gem install sass
 gem install compass
+```
+
 在每一个安装过程中，你都会看到如下输出：
+
+```
 Fetching: sass-3.x.x.gem (100%)
 Successfully installed sass-3.x.x
 Parsing documentation for sass-3.x.x
 Installing ri documentation for sass-3.x.x
 Done installing documentation for sass after 6 secon
 1 gem installed
+```
+
 安装完成之后，你应该通过运行下面的命令来确认应用已经正确地安装到了电脑中：
+
+```
 sass -v
 Sass 3.x.x (Selective Steve)
 
@@ -46,8 +67,12 @@ Compass 1.x.x (Polaris)
 Copyright (c) 2008-2015 Chris Eppstein
 Released under the MIT License.
 Compass is charityware.
-Please make a tax deductable donation for a worthy cause: [http://umdf.org/compass](http://umdf.org/compass)
+Please make a tax deductable donation for a worthy cause: http://umdf.org/compass
+```
+
 ### Sass常用命令：
+
+```
 //更新sass
 gem update sass
 
@@ -56,8 +81,15 @@ sass -v
 
 //查看sass帮助
 sass -h
+```
+
+
+
 ## Sass的编译
+
 ### 命令行编译：
+
+```
 //单文件转换命令
 sass input.scss output.css
 
@@ -66,8 +98,13 @@ sass --watch input.scss:output.css
 
 //如果你有很多的sass文件的目录，你也可以告诉sass监听整个目录：
 sass --watch app/sass:public/stylesheets
+```
+
 ### 命令行编译配置选项：
-命令行编译sass有配置选项，如编译过后css排版、生成调试map、开启debug信息等，可通过使用命令sass -v查看详细。我们一般常用两种--style --sourcemap
+
+命令行编译`sass`有配置选项，如编译过后css排版、生成调试map、开启debug信息等，可通过使用命令`sass -v`查看详细。我们一般常用两种`--style`  `--sourcemap`
+
+```
 //编译格式
 sass --watch input.scss:output.css --style compact
 
@@ -79,10 +116,15 @@ sass --watch input.scss:output.css --style expanded --sourcemap
 
 //开启debug信息
 sass --watch input.scss:output.css --debug-info
-* --style表示解析后的css是什么排版格式
-sass内置有四种编译格式:nested``expanded``compact``compressed
-* --sourcemap表示开启sourcemap调试。开启sourcemap调试后，会生成一个后缀名为.css.map文件
+```
+
++ `--style`表示解析后的`css`是什么排版格式
+  sass内置有四种编译格式:`nested``expanded``compact``compressed`
++ `--sourcemap`表示开启`sourcemap`调试。开启`sourcemap`调试后，会生成一个后缀名为`.css.map`文件
+
 ### 编译演示
+
+```scss
 //未编译样式
 .box {
   width: 300px;
@@ -92,7 +134,11 @@ sass内置有四种编译格式:nested``expanded``compact``compressed
     line-height: 30px;
   }
 }
-nested 嵌套格式
+```
+
+#### nested 嵌套格式
+
+```scss
 /*命令行内容*/
 sass style.scss:style.css --style nested
 
@@ -103,7 +149,11 @@ sass style.scss:style.css --style nested
   .box-title {
     height: 30px;
     line-height: 30px; }
-expanded 扩展格式
+```
+
+#### expanded 扩展格式
+
+```scss
 /*命令行内容*/
 sass style.scss:style.css --style expanded
 
@@ -116,21 +166,36 @@ sass style.scss:style.css --style expanded
   height: 30px;
   line-height: 30px;
 }
-compact 紧凑格式
+```
+
+#### compact 紧凑格式
+
+```scss
 /*命令行内容*/
 sass style.scss:style.css --style compact
 
 /*编译过后样式*/
 .box { width: 300px; height: 400px; }
 .box-title { height: 30px; line-height: 30px; }
-compressed 压缩格式
+```
+
+#### compressed 压缩格式
+
+```scss
 /*命令行内容*/
 sass style.scss:style.css --style compressed
 
 /*编译过后样式*/
 .box{width:300px;height:400px}.box-title{height:30px;line-height:30px}
+```
+
+
+
 ## Sass的使用
+
 ### 一、嵌套
+
+```scss
 // sass 允许样式可以和页面布局一样嵌套
 ul{
 	list-style: none;
@@ -162,7 +227,11 @@ ul{
         right: 0;
     }
 }
+```
+
 ### 二、变量
+
+```scss
 // sass允许声明一个变量
 $bgColor: #9000ff;
 $border: 1px solid $bgColor;
@@ -175,7 +244,11 @@ $border: 1px solid $bgColor;
 .inner{
 	border: $border;
 }
+```
+
 ### 三、混合
+
+```scss
 /* 语法
 @mixin 名字(参数1,参数2...){
 	...
@@ -213,7 +286,11 @@ $border: 1px solid $bgColor;
     @include default(red);
     // $hover 和 $act 也会被自动赋值为 red
 }
+```
+
 ### 四、继承
+
+```scss
 // sass 使用@extend 选择器 来继承样式，选择器相关的样式都会继承
 .box{
 	padding: 15px;
@@ -226,7 +303,11 @@ $border: 1px solid $bgColor;
 	@extend .box;
 	background-color: red;
 }
+```
+
 ### 五、导入扩展
+
+```scss
 // css @import 引入其它css文件会让浏览器发出请求引入其它css文件。sass中的 @import 可以将其它scss文件中的样式导入到自身文件中
 // 文件 init.scss
 *{
@@ -238,17 +319,23 @@ $border: 1px solid $bgColor;
 .box{
     width: 200px;
 }
+```
+
 ### 六、注释
+
+```scss
 在sass中使用这样的多行注释会在压缩输出的css中被去掉
 /**
  * 天街小雨润如酥
-
  * 草色遥看近却无
-
  */
  sass 编译的css中 单行注释不会显示
  在多行注释的开头加上！号表示强制注释，编译的时候不会被去掉 /**! */ 
+```
+
 ### 七、 颜色调整
+
+```scss
 // adjust-hue(要调整的颜色值,要调整的度数)
 // lighten(要处理的颜色,要增加的亮度)  让一个颜色变亮
 // darken(要处理的颜色,要减小的亮度)  让一个颜色变暗
@@ -261,7 +348,11 @@ $base-color: #ff0000;
     color: lighten($base-color, 10%);
     background-color: adjust-hue($base-color, 137deg);
 }
+```
+
 ### 八、map
+
+```scss
 // 语法： $map: (key1: value1, key2: value2, key3: value3 ...)
 // map-keys($colors) 拿到所有的key值
 // map-values($colors) 拿到所有的value值
@@ -273,19 +364,23 @@ $colors: (light: #fff, dark: #000);
     // map-get 获取map中的某个值
     color: map-get($colors, dark);
 }
-### 九、数值类型与运算
-sass 支持的数据类型有:
-* 数字，1, 2, 13, 10px
-* 字符串，有引号字符串与无引号字符串，"foo", 'bar', baz
-* 颜色，blue, #04a3f9, rgba(255,0,0,0.5)
-* 布尔型，true, false
-* 空值，null
-* 数组 (list)，用空格或逗号作分隔符，1.5em 1em 0 2em, Helvetica, Arial, sans-serif
-* maps, 相当于 JavaScript 的 object，(key1: value1, key2: value2)
+```
 
+### 九、数值类型与运算
+
+sass 支持的数据类型有:
+
++ 数字，1, 2, 13, 10px
++ 字符串，有引号字符串与无引号字符串，"foo", 'bar', baz
++ 颜色，blue, #04a3f9, rgba(255,0,0,0.5)
++ 布尔型，true, false
++ 空值，null
++ 数组 (list)，用空格或逗号作分隔符，1.5em 1em 0 2em, Helvetica, Arial, sans-serif
++ maps, 相当于 JavaScript 的 object，(key1: value1, key2: value2)
+
+```scss
 /*
 type-of()	可以判断类型
-sass 支持布尔值运算 and or 以及 not 运算
 sass 支持数学计算	2*8 2+8 除法要加() (8/4) 5px+5px 5px-2 5px*2 (5px*5px) (10px/2px) (40px/2)
 sass 支持一些数学函数
 	abs()	取绝对值
@@ -310,14 +405,24 @@ list 列表 如： 1px solid red; 5px 25px 25px 15px;
 	join(20px 30px, 30px 20px) 合并
 	join(20 15, 10 45, common)
 */
+```
+
 ### 十、拼接、插入
+
+```scss
+$version "0.0.1";
+/* 项目的当前版本： #{$version} */
 $name: "info";
 $attr: "border";
 
 .alert-#{$name}{
     #{$attr}-color: #ccc;
 }
+```
+
 ### 十一、控制指令
+
+```scss
 // 判断
 /*
 	@if 条件 {
@@ -381,7 +486,11 @@ $icons: success error warning;
         background-image: url("../imgs/#{$icon}.png");
     }
 }
+```
+
 ### 十二、函数
+
+```scss
 /*
 	@function 名称 (参数1,参数2){
 		...
@@ -395,7 +504,14 @@ $colors: (light: #fff, dark: #000);
 .box{
     color: getColor(light);
 }
+```
+
 ### 十三、警告与错误
+
+```scss
 @warn "这是一个警告提示信息";
 @error "这是一个错误提示信息";
+```
+
+
 
