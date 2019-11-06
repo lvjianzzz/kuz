@@ -18,7 +18,7 @@
         E的父元素的最后一个子元素
         + E:nth-child(n)
         E的父元素第n个子元素
-        + E：nth-child(n)
+        + E：nth-last-child(n)
         E的父元素从后往前数第n个子元素
         + E:nth-child(n + 5)
         E的父元素5以后的子元素
